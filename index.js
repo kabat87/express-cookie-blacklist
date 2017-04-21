@@ -1,3 +1,4 @@
+var onHeaders = require('on-headers');
 var deleteItem = require('./lib/deleteItem');
 var clone = require('clone');
 
@@ -7,7 +8,7 @@ module.exports = function (blacklist) {
     blacklist = [blacklist];
   }
   return function (req, res, next) {
-    res.on('header', function () {
+    onHeaders(res, function () {
       req._sessionBeforeBlacklist = clone(req.session);
       if (blacklist) {
         blacklist.forEach(function(key) {

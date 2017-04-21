@@ -26,6 +26,7 @@
     "should": "~3.2.0-beta1"
   },
   "dependencies": {
-    "clone": "~0.1.11"
+    "clone": "~0.1.11",
+    "on-headers": "^1.0.1"
   }
 }
